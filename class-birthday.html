@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>birthday</title>
+</head>
+<body>
+<button type = "button" onclick="birthday()">Bài 1: Ngày tháng năm sinh</button>
+<button type = "button" onclick="mathpractice()">Bài 2: Làm việc với Math</button>
+<button type = "button" onclick="js()">Bài 3: Làm việc với đối tượng String</button>
+
+<script>
+    function birthday(d,m,y){
+        let birthday = new Date(2000,10,10);
+        let today = Date.now();
+        let a = today - birthday;
+        let s = Math.round(a/1000);
+        let min = Math.round(s/60);
+        let h = Math.round(min/60);
+        let dy = Math.round(h/24);
+        let mt = Math.round(dy/30);
+        let yr = Math.round(dy/365);
+        document.write("Bạn đã sống " + yr + " năm" + "</br>");
+        document.write("Bạn đã sống " + mt + " tháng"+ "</br>");
+        document.write("Bạn đã sống " + dy + " năm"+ "</br>");
+        document.write("Bạn đã sống " + min + " phút"+ "</br>");
+        document.write("Bạn đã sống " + s + " giây"+ "</br>");
+    }
+
+    function mathpractice(){
+        let x = Math.round(Math.random()*10);
+        let y = Math.round(Math.random()*400);
+        let z = Math.round(Math.random()*(-50)+100);
+        document.write("Sinh số ngẫu nhiên từ 0-10 là: " + x + "</br>");
+        document.write("Sinh số ngẫu nhiên từ 0-400 là: " + y + "</br>");
+        document.write("Sinh số ngẫu nhiên từ 50-100 là: " + z + "</br>");
+    }
+
+    function js(){
+        let str = "Tôi yêu ngôn ngữ lập trình Javascript";
+        let arr = [];
+        arr.push(str.split(""));
+        let count = 0;
+        let count1 = 0;
+        for (let i = 0; i < arr.length; i ++){
+            if ( arr[i] === "a"){
+                count ++;
+            }
+            if ( arr[i] === " "){
+                count1 ++;
+            }
+        }
+        document.write("Số lần xuất hiện của ký tự \"a\" là: " + count + "</br>");
+        document.write("Số từ trong chuỗi là: " +(count1 +1) + "</br>");
+        let str1 = str.replace("Javascript","Typescript");
+        document.write("Chuối đã thay là: " + str1 + "</br>");
+    }
+
+
+
+</script>
+</body>
+</html>
